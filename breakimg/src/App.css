@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Keania+One&display=swap');
+
+:root {
+  --bg-color: #140F0F;
+  --yellow-main: #F9E400;
+  --gray-second: #171717;
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+  --Keania: 'Keania one', sans-serif;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#hero-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: url("background_home.png");
+  background-position: center;
+  background-size: cover;
+  z-index: 10;
+}
+
+#filter-hero-bg {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: brightness(30%);
+  z-index: 20;
+}
+
+#hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100svh;
+  width: 100svw;
+  z-index: 30;
+}
+
+#hero-content #hero-title {
+  margin: 0 auto;
+  width: fit-content;
+  height: fit-content;
+  font-size: 8rem;
+  font-family: var(--Keania);
+  color: var(--yellow-main);
+}
+
+#hero-content #hero-subtitle {
+  font-family: var(--Keania);
+  font-size: 2rem;
+}
+
+#hero-links {
+  display: flex;
+  gap: 25px;
+}
+
