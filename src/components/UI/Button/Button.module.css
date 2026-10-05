@@ -1,0 +1,65 @@
+@import "../../../Variables.module.css";
+
+#container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.bg_button {
+  fill: var(--yellow-main);
+  stroke-width: 3;
+  stroke: #171717;
+  transition: .3s;
+}
+
+#container:hover .bg_button{
+  fill: #171717;
+  stroke-width: 3;
+  stroke: var(--yellow-main);
+}
+
+#container:hover .button_text {
+  color: var(--yellow-main);
+}
+
+#arrow_up {
+  transform: rotate(180deg);
+}
+
+.arrow {
+  color: transparent;
+}
+
+#container:hover .arrow {
+  color: var(--yellow-main);
+}
+
+
+
+.button_text {
+  position: absolute;
+  z-index: 1000;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  color: #171717;
+  font-size: 2rem;
+  font-family: var(--Keania);
+}
+
+@media screen and (max-width: 420px) {
+  .bg_button {
+    width: 90%;
+  }
+
+  .button_text {
+    font-size: 1.5rem;
+  }
+}
+

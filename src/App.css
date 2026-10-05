@@ -1,14 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Keania+One&display=swap');
-
-:root {
-  --bg-color: #140F0F;
-  --yellow-main: #F9E400;
-  --gray-second: #171717;
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-  --Keania: 'Keania one', sans-serif;
-}
+@import "./Variables.module.css";
 
 body {
   padding: 0;
@@ -48,18 +38,66 @@ body {
   margin: 0 auto;
   width: fit-content;
   height: fit-content;
+  text-shadow: 8px -5px 0px #171717;
   font-size: 8rem;
   font-family: var(--Keania);
   color: var(--yellow-main);
 }
 
 #hero-content #hero-subtitle {
+  margin: 0 0 50px 0;
+  color: var(--yellow-main);
   font-family: var(--Keania);
   font-size: 2rem;
+  text-align: center;
 }
 
 #hero-links {
   display: flex;
   gap: 25px;
+}
+
+#profile {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  z-index: 1000;
+  top: 10px;
+  right: 10px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 2px #000;
+  background: var(--yellow-main);
+  padding: 10px;
+  cursor: pointer;
+}
+
+#profile {
+  box-shadow: none;
+}
+
+@media screen and (max-width: 800px) {
+ #hero-content #hero-title {
+   font-size: 5rem;
+ }
+
+ #hero-links {
+   display: flex;
+   flex-direction: column;
+ }
+}
+
+@media screen and (max-width: 420px) {
+  #hero-content #hero-title {
+   font-size: 3rem;
+ }
+
+ #hero-content #hero-subtitle {
+   font-size: 1rem;
+ }
+
+ #hero-links {
+   display: flex;
+   flex-direction: column;
+ }
 }
 
