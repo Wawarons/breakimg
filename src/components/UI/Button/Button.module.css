@@ -1,6 +1,6 @@
 @import "../../../Variables.module.css";
 
-#container {
+.container {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -9,34 +9,18 @@
 }
 
 .bg_button {
-  fill: var(--yellow-main);
   stroke-width: 3;
-  stroke: #171717;
   transition: .3s;
 }
 
-#container:hover .bg_button{
-  fill: #171717;
-  stroke-width: 3;
-  stroke: var(--yellow-main);
-}
 
-#container:hover .button_text {
-  color: var(--yellow-main);
-}
-
-#arrow_up {
+.arrow_up {
   transform: rotate(180deg);
 }
 
 .arrow {
   color: transparent;
 }
-
-#container:hover .arrow {
-  color: var(--yellow-main);
-}
-
 
 
 .button_text {
@@ -62,4 +46,3 @@
     font-size: 1.5rem;
   }
 }
-

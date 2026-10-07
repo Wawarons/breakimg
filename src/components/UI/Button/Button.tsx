@@ -6,41 +6,57 @@ type ButtonProps = {
   link: string;
   text: string;
   borderColor: string;
-  color?: string;
   backgroundColor?: string;
+  id?: string;
 };
 
 const Button = ({
   link,
   text,
-  color,
   borderColor,
   backgroundColor,
+  id,
 }: ButtonProps) => {
-  const styleButton = {
-    fill: `${backgroundColor}`,
-    strokeWidth: 3,
-    stroke: `${borderColor}`,
-    transition: ".3s",
-  };
+
 
   return (
-    <div id={style.container}>
-      <ArrowDown className={style.arrow} />
-      <BackgroundButton className={style.bg_button} style={styleButton} />
-      <a
-        className={style.button_text}
-        href={link}
-        style={{ color: `${color}` }}
-      >
-        {text}
-      </a>
-      <ArrowDown
-        className={style.arrow}
-        id={style.arrow_up}
-        style={{ fill: `${color}` }}
-      />
-    </div>
+    <>
+      <style>{`
+
+        #${id} .${style.bg_button} {
+          fill: ${backgroundColor};
+          stroke: ${borderColor};
+          transition: .3s;
+        }
+
+        #${id}:hover .${style.bg_button} {
+          fill: ${borderColor};
+          stroke: ${backgroundColor};
+        }
+
+        #${id}:hover .${style.arrow} {
+          color: ${backgroundColor};
+        }
+
+        #${id}:hover .${style.button_text} {
+          color: ${backgroundColor};
+        }
+
+      `}</style>
+      <div className={style.container} id={id}>
+        <ArrowDown className={style.arrow} />
+        <BackgroundButton className={style.bg_button} />
+        <a
+          className={style.button_text}
+          href={link}
+        >
+          {text}
+        </a>
+        <ArrowDown
+          className={style.arrow + " " + style.arrow_up}
+        />
+      </div>
+    </>
   );
 };
 

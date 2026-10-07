@@ -11,22 +11,27 @@ const Hero = () => {
         <h1 id="hero-title">BREAKIMG</h1>
         <h2 id="hero-subtitle">Une image. Un indice. À toi de deviner.</h2>
         <div id="hero-links">
-          <Button id="button_cinema" text="Cinéma" link="#" />
+          <Button
+            id="button_cinema"
+            text="Cinéma"
+            link="#"
+            borderColor="#140F0F"
+            backgroundColor="#F9E400"
+          />
           <Button
             id="button_serie"
             link="#"
             text="Série"
-            borderColor="#007375"
-            backgroundColor="#00D9DB"
-            color="#004647"
+            borderColor="#005F61"
+            backgroundColor="#00BFC2"
           />
+
           <Button
             id="button_jeux-video"
             link="#"
             text="Jeux-Vidéo"
-            borderColor="#00753F"
-            backgroundColor="#00DB75"
-            color="#004726"
+            borderColor="#006B3A"
+            backgroundColor="#00C96B"
           />
         </div>
       </section>
