@@ -12,12 +12,20 @@ const Hero = () => {
       link: "/profile",
     },
     {
-      name: "Profile",
-      link: "/profile",
+      name: "Paramétres",
+      link: "/profile/parametres",
     },
     {
-      name: "Profile",
-      link: "/profile",
+      name: "Déconnexion",
+      link: "/profile/logout",
+    },
+    {
+      name: "Politiques de confidentialité",
+      link: "/politiques-de-confidentialite",
+    },
+    {
+      name: "C.G.U",
+      link: "/CGU",
     },
   ];
 
@@ -30,7 +38,7 @@ const Hero = () => {
       <div id="filter-hero-bg"></div>
 
       {sideBar ? (
-        <SideBarProfile links={sideLinks} />
+        <SideBarProfile links={sideLinks} closeFunction={handleProfile} />
       ) : (
         <ProfilSvg id="profile" onClick={handleProfile} />
       )}
