@@ -1,12 +1,39 @@
+import { useState } from "react";
 import "../App.css";
 import Button from "./UI/Button/Button.tsx";
+import SideBarProfile from "./UI/Sidebar/Profile/SideBarProfile.tsx";
 import ProfilSvg from "../assets/UI/Hero/profil.svg?react";
 
 const Hero = () => {
+  const [sideBar, setSideBar] = useState(false);
+  const sideLinks = [
+    {
+      name: "Profile",
+      link: "/profile",
+    },
+    {
+      name: "Profile",
+      link: "/profile",
+    },
+    {
+      name: "Profile",
+      link: "/profile",
+    },
+  ];
+
+  const handleProfile = () => {
+    setSideBar(!sideBar);
+  };
+
   return (
     <div id="hero-container">
       <div id="filter-hero-bg"></div>
-      <ProfilSvg id="profile" />
+
+      {sideBar ? (
+        <SideBarProfile links={sideLinks} />
+      ) : (
+        <ProfilSvg id="profile" onClick={handleProfile} />
+      )}
       <section id="hero-content">
         <h1 id="hero-title">BREAKIMG</h1>
         <h2 id="hero-subtitle">Une image. Un indice. À toi de deviner.</h2>
