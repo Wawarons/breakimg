@@ -1,0 +1,88 @@
+@import "../../../Variables.module.css";
+
+#movie {
+  border: 3px solid var(--movie-main-color);
+}
+
+#serie {
+  border: 3px solid var(--serie-main-color);
+}
+
+#video-game {
+  border: 3px solid var(--video-game-main-color);
+}
+
+#movie .titleContainer {
+  background: var(--movie-main-color);
+}
+
+#serie .titleContainer {
+  background: var(--serie-main-color);
+}
+
+#video-game .titleContainer {
+  background: var(--video-game-main-color);
+}
+
+#movie .newRoom {
+  background: var(--movie-main-color);
+}
+
+#serie .newRoom {
+  background: var(--serie-main-color);
+}
+
+#video-game .newRoom {
+  background: var(--video-game-main-color);
+}
+
+.roomContainer {
+  position: relative;
+  margin: 25px;
+  background: var(--gray-second);
+  color: var(--yellow-main);
+  font-family: var(--Keania);
+  height: 500px;
+  width: 300px;
+  overflow: hidden;
+}
+
+.titleContainer {
+  color: var(--gray-second);
+  width: fit-content;
+  padding: 10px 20px;
+  margin: 0;
+  clip-path: polygon(100% 0, 100% 60%, 85% 100%, 0 100%, 0 0);
+}
+
+.roomPresentation {
+  padding: 2px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 2px 2px 2px #000;
+}
+
+.roomLink {
+  color: var(--yellow-main);
+  text-decoration: none;
+}
+
+.roomPlayers {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.newRoom {
+  position: absolute;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--gray-second);
+  width: 100%;
+  font-size: 1.2rem;
+  bottom: 0;
+}

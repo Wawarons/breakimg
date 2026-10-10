@@ -8,4 +8,10 @@
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
   --Keania: 'Keania one', sans-serif;
+  --tablet-breakpoint: "800px";
+  --mobile-breakpoint: "420px";
+  --movie-main-color: #F9E400;
+  --serie-main-color: #00BFC2;
+  --video-game-main-color: #00C96B;
+;
 }
