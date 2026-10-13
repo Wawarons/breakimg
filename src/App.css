@@ -77,6 +77,14 @@ body {
 }
 
 #rooms {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: fit-content;
+}
+
+#roomsContainer {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;

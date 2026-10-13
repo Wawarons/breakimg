@@ -5,6 +5,7 @@ import SideBarProfile from "./UI/Sidebar/Profile/SideBarProfile.tsx";
 import ProfilSvg from "../assets/UI/Hero/profil.svg?react";
 import type { Rooms } from "../type.d.ts";
 import RoomsContainer from "../components/UI/Rooms/RoomsContainer.tsx";
+import PopupRoom from "./UI/Rooms/Popup/Popup.tsx";
 
 const Hero = () => {
   const [sideBar, setSideBar] = useState(false);
@@ -95,9 +96,12 @@ const Hero = () => {
         </div>
       </section>
       <section id="rooms">
-        <RoomsContainer id="movie" title="Cinéma" rooms={dataRoom} />
-        <RoomsContainer id="serie" title="Série" rooms={dataRoom} />
-        <RoomsContainer id="video-game" title="Jeux-Vidéo" rooms={dataRoom} />
+        <PopupRoom />
+        <div id="roomsContainer">
+          <RoomsContainer id="movie" title="Cinéma" rooms={dataRoom} />
+          <RoomsContainer id="serie" title="Série" rooms={dataRoom} />
+          <RoomsContainer id="video-game" title="Jeux-Vidéo" rooms={dataRoom} />
+        </div>
       </section>
     </main>
   );

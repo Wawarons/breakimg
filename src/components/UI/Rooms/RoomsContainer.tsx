@@ -1,6 +1,8 @@
+import { useState } from "react";
 import type { Rooms } from "../../../../type.d.ts";
 import Lock from "../../../assets/UI/Rooms/lock.svg?react";
 import LockOpen from "../../../assets/UI/Rooms/lock-open.svg?react";
+import Popup from "./Popup/Popup.tsx";
 import style from "./roomContainer.module.css";
 
 const RoomsContainer = ({
@@ -12,6 +14,8 @@ const RoomsContainer = ({
   rooms: Rooms;
   id: string;
 }) => {
+  const [popup, setPopup]: boolean = useState(false);
+
   return (
     <div className={style.roomContainer} id={style[id]}>
       <h2 className={style.titleContainer}>{title}</h2>
@@ -36,9 +40,6 @@ const RoomsContainer = ({
           );
         })}
       </div>
-      <a className={style.newRoom} href="">
-        Create a room
-      </a>
     </div>
   );
 };
