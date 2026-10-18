@@ -1,15 +1,18 @@
-import { useState } from "react";
-import "../App.css";
-import Button from "./UI/Button/Button.tsx";
-import SideBarProfile from "./UI/Sidebar/Profile/SideBarProfile.tsx";
-import ProfilSvg from "../assets/UI/Hero/profil.svg?react";
-import type { Rooms } from "../type.d.ts";
-import RoomsContainer from "../components/UI/Rooms/RoomsContainer.tsx";
-import PopupRoom from "./UI/Rooms/Popup/Popup.tsx";
+import { useEffect, useState } from "react";
+import "../../App.css";
+import Button from "../UI/Button/Button";
+import SideBarProfile from "../UI/Sidebar/Profile/SideBarProfile";
+import ProfilSvg from "../../assets/UI/Hero/profil.svg?react";
+import type { Rooms, SideLinks } from "../../type";
+import RoomsContainer from "../UI/Rooms/RoomsContainer";
+import PopupRoom from "../UI/Rooms/Popup/Popup";
+import { useAuth } from "../Utilities/AuthContext";
 
 const Hero = () => {
   const [sideBar, setSideBar] = useState(false);
-  const [dataRoom, setDataRoom]: Rooms = useState({
+  const [sideLinks, setSideLinks] = useState<SideLinks[]>([]);
+  const { user } = useAuth();
+  const dataRoom = useState<Rooms>({
     list: [
       {
         id: 1,
@@ -31,39 +34,52 @@ const Hero = () => {
     maxPage: 1,
   });
 
-  const sideLinks = [
-    {
-      name: "Profile",
-      link: "/profile",
-    },
-    {
-      name: "Paramétres",
-      link: "/profile/parametres",
-    },
-    {
-      name: "Déconnexion",
-      link: "/profile/logout",
-    },
-    {
-      name: "Politiques de confidentialité",
-      link: "/politiques-de-confidentialite",
-    },
-    {
-      name: "C.G.U",
-      link: "/CGU",
-    },
-  ];
-
   const handleProfile = () => {
     setSideBar(!sideBar);
   };
+
+  useEffect(() => {
+    if (user) {
+      setSideLinks([
+        {
+          name: "Profile",
+          link: "/profile"
+        },
+        {
+          name: "Politiques de confidentialité",
+          link: "/politiques-de-confidentialite",
+        },
+        {
+          name: "C.G.U",
+          link: "/CGU",
+        },
+        {
+          name: "Déconnexion",
+          link: "/logout"
+        }
+      ]);
+    } else {
+      setSideLinks([{
+        name: "Connexion",
+        link: "/login"
+      },
+      {
+        name: "Politiques de confidentialité",
+        link: "/politiques-de-confidentialite",
+      },
+      {
+        name: "C.G.U",
+        link: "/CGU",
+      }])
+    }
+  }, [])
 
   return (
     <main id="hero-container">
       <div id="filter-hero-bg"></div>
 
       {sideBar ? (
-        <SideBarProfile links={sideLinks} closeFunction={handleProfile} />
+        <SideBarProfile key={ sideLinks.length}  links={sideLinks} closeFunction={handleProfile} />
       ) : (
         <ProfilSvg id="profile" onClick={handleProfile} />
       )}

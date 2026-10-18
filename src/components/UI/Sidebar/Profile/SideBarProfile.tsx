@@ -2,11 +2,13 @@ import style from "./SideBarProfile.module.css";
 import Cross from "../../../../assets/UI/Sidebar/cross.svg?react";
 
 type SideBarProfileProps = {
-  links: [{ link: string; name: string }];
+  links: { link: string, name: string }[];
   closeFunction?: () => void;
 };
 
-const SideBarProfile: SideBarProfileProps = ({ links, closeFunction }) => {
+const SideBarProfile = ({ links, closeFunction }: SideBarProfileProps) => {
+
+
   return (
     <aside id={style.sidebar}>
       <Cross id={style.cross} width={40} height={40} onClick={closeFunction} />

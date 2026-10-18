@@ -1,0 +1,72 @@
+#register {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--Keania);
+}
+
+#title {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: var(--yellow-main);
+}
+
+#icon_profile {
+    width: 35px;
+    height: 35px;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 50%;
+    background: var(--yellow-main);
+}
+
+#sideLeft {
+    width: 25%;
+    height: 100svh;
+}
+
+
+#content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 100px auto;
+    font-size: 1.3rem;
+}
+
+#form {
+  display: flex;
+flex-direction: column;
+}
+
+.form_container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 10px;
+}
+
+#already_account {
+    font-size: 1rem;
+    color: var(--yellow-main);
+    text-align: center;
+}
+
+
+
+#errors {
+    color: red;
+    font-size: 1rem;
+    text-align: center;
+}
+
+#submit {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-family: var(--Keania);
+    background: var(--gray-second);
+    color: white;
+    width: fit-content;
+    margin: 25px auto;
+    padding: 5px 10px;
+    cursor: pointer;
+}
