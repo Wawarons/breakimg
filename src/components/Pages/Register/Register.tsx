@@ -3,12 +3,14 @@ import backgroundSide from "../../../assets/UI/Login/room_cinema.png";
 import Profile from "../../../assets/UI/Hero/profil.svg?react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { register } from "../../Utilities/api";
 
 const Register = () => {
   const [errors] = useState<string>();
 
   const handleRegister = (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
+    register(e);
   };
 
   return (
@@ -28,19 +30,19 @@ const Register = () => {
         <form id={style.form} onSubmit={handleRegister}>
           <div className={style.form_container}>
             <label htmlFor="username">Pseudo</label>
-            <input type="text" name="username" placeholder="Redrum" />
+            <input type="text" name="username" placeholder="Redrum" required/>
           </div>
           <div className={style.form_container}>
             <label htmlFor="email">Email</label>
-            <input type="email" name="email" placeholder="jhondoe@domain.com" />
+            <input type="email" name="email" placeholder="jhondoe@domain.com" required/>
           </div>
           <div className={style.form_container}>
             <label htmlFor="password">Mot de passe</label>
-            <input type="password" name="password" placeholder="*********" />
+            <input type="password" name="password" placeholder="*********" required/>
           </div>
           <div className={style.form_container}>
-            <label htmlFor="password">Confirmer le mot de passe</label>
-            <input type="password" name="password" placeholder="*********" />
+            <label htmlFor="confirm-password">Confirmer le mot de passe</label>
+            <input type="password" name="confirm-password" placeholder="*********" required/>
           </div>
           {errors && <p id={style.errors}>{errors}</p>}
 

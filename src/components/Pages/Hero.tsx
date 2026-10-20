@@ -12,7 +12,8 @@ const Hero = () => {
   const [sideBar, setSideBar] = useState(false);
   const [sideLinks, setSideLinks] = useState<SideLinks[]>([]);
   const { user } = useAuth();
-  const dataRoom = useState<Rooms>({
+  const [dataRoom, setDataRoom] = useState<Rooms>({
+
     list: [
       {
         id: 1,
@@ -32,7 +33,8 @@ const Hero = () => {
     total: 1,
     actualPage: 1,
     maxPage: 1,
-  });
+    }
+  );
 
   const handleProfile = () => {
     setSideBar(!sideBar);
@@ -72,7 +74,7 @@ const Hero = () => {
         link: "/CGU",
       }])
     }
-  }, [])
+  }, [user])
 
   return (
     <main id="hero-container">

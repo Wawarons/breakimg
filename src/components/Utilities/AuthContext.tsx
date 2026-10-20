@@ -22,12 +22,15 @@ const AuthProvider = ({ children }: {children: ReactNode}) => {
         });
 
         if (!response.ok) {
+          console.log("Utilisateur déconnecté.")
           setUser(null);
           return;
         }
 
         const data = await response.json();
         setUser(data.data);
+
+        console.log("Utilisateur connecté.")
       } catch {
         // Erreur réseau : ne pas conclure forcément
         // que la session est invalide.

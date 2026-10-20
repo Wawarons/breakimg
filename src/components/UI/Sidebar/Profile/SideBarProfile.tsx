@@ -1,5 +1,6 @@
 import style from "./SideBarProfile.module.css";
 import Cross from "../../../../assets/UI/Sidebar/cross.svg?react";
+import { Link } from "react-router-dom";
 
 type SideBarProfileProps = {
   links: { link: string, name: string }[];
@@ -17,11 +18,11 @@ const SideBarProfile = ({ links, closeFunction }: SideBarProfileProps) => {
           ////////////////////////////////////////////
         </p>
         <ul>
-          {links.map((link) => {
+          {links.map((link, index) => {
             return (
-              <a href={link.link}>
+              <Link key={index} to={link.link}>
                 <li>{link.name}</li>
-              </a>
+              </Link>
             );
           })}
         </ul>

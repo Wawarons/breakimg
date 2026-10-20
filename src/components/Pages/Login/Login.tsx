@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import login from "../../Utilities/api";
+import { login } from "../../Utilities/api";
 import style from "./Login.module.css";
 import backgroundSide from "../../../assets/UI/Login/room_cinema.png";
 import Profile from "../../../assets/UI/Hero/profil.svg?react";
@@ -57,11 +57,11 @@ const Login = () => {
         <form id={ style.form } onSubmit={handleLogin}>
           <div className={style.form_container}>
             <label htmlFor="email">Email</label>
-            <input type="email" name="email" placeholder="jhondoe@domain.com"/>
+            <input type="email" name="email" placeholder="jhondoe@domain.com" required/>
           </div>
           <div className={style.form_container}>
             <label htmlFor="password">Mot de passe</label>
-            <input type="password" name="password" placeholder="*********" />
+            <input type="password" name="password" placeholder="*********" required/>
             <Link to="" id={ style.reset_password }>mot de passe oublié</Link>
           </div>
           {errors && <p id={ style.errors }>{errors}</p>}
